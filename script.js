@@ -19,11 +19,6 @@ hamburger.addEventListener("click", function () {
 shorten.addEventListener("click", (e) => {
   let inputValue = input.value;
   input.value = "";
-  if (input.value.trim() === "") {
-    e.preventDefault();
-    input.style.border = "2px solid hsl(0, 87%, 67%)";
-    small.style.visibility = "visible";
-  }
 
   e.preventDefault();
 
@@ -55,6 +50,9 @@ shorten.addEventListener("click", (e) => {
 
       div2.appendChild(p2);
       div.appendChild(div2);
+      const div3 = document.createElement("div");
+      div3.setAttribute("class", "line_divide");
+      div.insertBefore(div3, div2);
 
       const button = document.createElement("button");
       button.setAttribute("class", "copy");
@@ -67,4 +65,9 @@ shorten.addEventListener("click", (e) => {
     .catch(function (error) {
       console.error("Error:", error);
     });
+  if (input.value.trim() === "") {
+    e.preventDefault();
+    input.style.border = "2px solid hsl(0, 87%, 67%)";
+    small.style.visibility = "visible";
+  }
 });
