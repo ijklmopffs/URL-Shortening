@@ -57,10 +57,20 @@ shorten.addEventListener("click", (e) => {
       const button = document.createElement("button");
       button.setAttribute("class", "copy");
       button.textContent = "Copy";
-
       div2.appendChild(button);
 
       two.insertBefore(div, h2);
+
+      button.addEventListener("click", function () {
+        let text = p2.textContent;
+
+        var clipboardItem = new ClipboardItem({
+          "text/plain": new Blob([text], { type: "text/plain" }),
+        });
+
+        // Copy the ClipboardItem to the clipboard
+        navigator.clipboard.write([clipboardItem]);
+      });
     })
     .catch(function (error) {
       console.error("Error:", error);

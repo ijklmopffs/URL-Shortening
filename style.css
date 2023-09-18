@@ -8,12 +8,13 @@
   align-items: center;
   justify-content: space-around;
   padding: 1em;
+  gap: 4em;
 }
 .links {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1200px;
+  width: 1400px;
 }
 .links_text a {
   text-decoration: none;

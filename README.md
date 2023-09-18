@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://github.com/ijklmopffs/URL-Shortening)
-- [Live Site URL](shorten-your-apiiiii.netlify.app)
+- [Live Site URL](https://shorten-your-apiiiii.netlify.app)
 
 ## My process
 
