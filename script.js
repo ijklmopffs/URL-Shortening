@@ -71,6 +71,9 @@ shorten.addEventListener("click", (e) => {
         // Copy the ClipboardItem to the clipboard
         navigator.clipboard.write([clipboardItem]);
       });
+
+      const uniqueKey = `savedDiv_${new Date().getTime()}`;
+      localStorage.setItem(uniqueKey, div.outerHTML);
     })
     .catch(function (error) {
       console.error("Error:", error);
@@ -79,5 +82,16 @@ shorten.addEventListener("click", (e) => {
     e.preventDefault();
     input.style.border = "2px solid hsl(0, 87%, 67%)";
     small.style.visibility = "visible";
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key.startsWith("savedDiv_")) {
+      const savedDivHTML = localStorage.getItem(key);
+      const div = document.createElement("div");
+      div.innerHTML = savedDivHTML;
+      two.insertBefore(div, h2);
+    }
   }
 });
